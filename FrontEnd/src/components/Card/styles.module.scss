@@ -1,0 +1,33 @@
+.card {
+  height: 400px;
+  width: 25%;
+  min-width: 250px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  .img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card_body {
+    padding: 10px;
+    max-height: 50%;
+    overflow: hidden;
+
+    .title {
+      margin: 0%;
+    }
+
+    .description {
+      margin: 0%;
+    }
+  }
+}
