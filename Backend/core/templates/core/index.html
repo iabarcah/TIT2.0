@@ -149,7 +149,6 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Tipo</th>
                                         <th scope="col">Cupo</th>
@@ -165,7 +164,6 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="evento in eventos">
-                                        <th scope="row">${evento.id_evento}</th>
                                         <th scope="row">${evento.nombre_evento}</th>
                                         <th scope="row">${evento.tipo_evento}</th>
                                         <th scope="row">${evento.cupo_evento}</th>
@@ -307,7 +305,7 @@
                                         class="form-control"
                                         id="url_evento"
                                         placeholder="Ponga la url del evento"
-                                        v-model = "currentEvento.url_evento"
+                                        v-model = "newEvento.url_evento"
                                         required =required
                                         >                                  
                                       </div>
@@ -542,7 +540,7 @@
                   this.$http.delete(`/api/evento/${id}/`)
                     .then((response) => {
                       this.loading = false;
-                      this.getArticles();
+                      location.reload();
                     })
                     .catch((err) =>{
                       this.loading = false;
